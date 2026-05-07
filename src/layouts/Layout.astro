@@ -1,0 +1,190 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "AI Agent Worx — building intelligent agents that actually work." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/" class="logo">AI Agent Worx</a>
+				<div class="nav-links">
+					<a href="/">Home</a>
+					<a href="/about">About</a>
+					<a href="/projects">Projects</a>
+					<a href="/contact">Contact</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>
+			<p>&copy; 2026 AI Agent Worx. All rights reserved.</p>
+			<p><a href="mailto:hello@aiagentworx.ai">hello@aiagentworx.ai</a></p>
+		</footer>
+		<style is:global>
+			:root {
+				--accent: 124, 58, 237;
+				--accent-light: 167, 139, 250;
+				--accent-dark: 91, 33, 182;
+				--bg: 10, 10, 15;
+				--bg-soft: 20, 20, 30;
+				--text: 240, 240, 245;
+				--text-soft: 160, 160, 175;
+			}
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+				background: rgb(var(--bg));
+				color: rgb(var(--text));
+				line-height: 1.6;
+			}
+			body {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+			header {
+				border-bottom: 1px solid rgba(var(--text), 0.1);
+				padding: 1.25rem 2rem;
+				background: rgba(var(--bg), 0.95);
+				backdrop-filter: blur(10px);
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+			nav {
+				max-width: 1100px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+			.logo {
+				font-weight: 700;
+				font-size: 1.25rem;
+				background: linear-gradient(135deg, rgb(var(--accent-light)), rgb(var(--accent)));
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				text-decoration: none;
+			}
+			.nav-links {
+				display: flex;
+				gap: 1.75rem;
+			}
+			.nav-links a {
+				color: rgb(var(--text-soft));
+				text-decoration: none;
+				font-size: 0.95rem;
+				transition: color 0.2s;
+			}
+			.nav-links a:hover {
+				color: rgb(var(--text));
+			}
+			main {
+				flex: 1;
+				max-width: 1100px;
+				width: 100%;
+				margin: 0 auto;
+				padding: 4rem 2rem;
+			}
+			h1 {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				font-weight: 800;
+				line-height: 1.1;
+				margin-bottom: 1.5rem;
+				background: linear-gradient(135deg, rgb(var(--text)), rgb(var(--accent-light)));
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+			h2 {
+				font-size: 2rem;
+				font-weight: 700;
+				margin: 2.5rem 0 1rem;
+			}
+			h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin: 1.5rem 0 0.5rem;
+			}
+			p {
+				margin-bottom: 1rem;
+				color: rgb(var(--text-soft));
+				font-size: 1.0625rem;
+			}
+			a {
+				color: rgb(var(--accent-light));
+			}
+			.lede {
+				font-size: 1.25rem;
+				color: rgb(var(--text));
+				max-width: 700px;
+				margin-bottom: 2rem;
+			}
+			.btn {
+				display: inline-block;
+				padding: 0.875rem 1.75rem;
+				background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--accent-dark)));
+				color: white;
+				text-decoration: none;
+				border-radius: 8px;
+				font-weight: 600;
+				transition: transform 0.15s, box-shadow 0.15s;
+			}
+			.btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 10px 30px rgba(var(--accent), 0.3);
+			}
+			.card {
+				background: rgb(var(--bg-soft));
+				border: 1px solid rgba(var(--text), 0.08);
+				border-radius: 12px;
+				padding: 1.75rem;
+				transition: border-color 0.2s, transform 0.2s;
+			}
+			.card:hover {
+				border-color: rgba(var(--accent-light), 0.4);
+				transform: translateY(-3px);
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+			footer {
+				border-top: 1px solid rgba(var(--text), 0.1);
+				padding: 2rem;
+				text-align: center;
+				color: rgb(var(--text-soft));
+				font-size: 0.9rem;
+			}
+			footer p {
+				margin-bottom: 0.5rem;
+				font-size: 0.9rem;
+			}
+		</style>
+	</body>
+</html>
