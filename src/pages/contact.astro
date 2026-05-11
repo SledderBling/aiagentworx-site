@@ -9,9 +9,79 @@ import Layout from '../layouts/Layout.astro';
 			Have a project in mind, or just want to talk shop about AI agents? Drop us a line.
 		</p>
 
-		<div class="card" style="max-width: 500px; margin-top: 2rem;">
-			<h3>Email</h3>
-			<p><a href="mailto:hello@aiagentworx.ai">hello@aiagentworx.ai</a></p>
+		<div class="grid" style="grid-template-columns: 1fr 1.4fr; align-items: flex-start;">
+			<div class="card">
+				<h3>Direct</h3>
+				<p>
+					📧 <a href="mailto:brian@aiagentworx.ai">brian@aiagentworx.ai</a>
+				</p>
+				<p>
+					📞 <a href="tel:+17752048485">775-204-8485</a>
+				</p>
+				<p style="font-size: 0.9rem; margin-top: 1rem;">
+					AI Agent Worx is a Brand W LLC company based in Sparks, Nevada.
+				</p>
+				<p style="font-size: 0.85rem; color: rgb(var(--text-soft));">
+					Office hours: Mon–Fri, 9 AM – 6 PM Pacific.
+				</p>
+			</div>
+
+			<div class="card">
+				<h3>Send a message</h3>
+				<p style="font-size: 0.95rem;">
+					Tell us what you're trying to build or solve. We'll reply within one business day.
+				</p>
+
+				<form
+					class="contact-form"
+					method="POST"
+					action="/thanks"
+					data-static-form-name="contact"
+				>
+					<label>
+						Name
+						<input type="text" name="name" required autocomplete="name" />
+					</label>
+
+					<label>
+						Email
+						<input type="email" name="email" required autocomplete="email" />
+					</label>
+
+					<label>
+						Phone <span style="font-weight: 400; color: rgb(var(--text-soft)); font-size: 0.85rem;">(optional, required if you want a callback or SMS)</span>
+						<input type="tel" name="phone" autocomplete="tel" placeholder="+1 555 123 4567" />
+					</label>
+
+					<label>
+						How can we help?
+						<textarea name="message" required placeholder="A few sentences about what you're working on…"></textarea>
+					</label>
+
+					<label class="consent">
+						<input type="checkbox" name="sms_consent" value="yes" />
+						<span>
+							<strong style="color: rgb(var(--text));">Yes, you may contact me by SMS at the number above.</strong><br />
+							By checking this box I agree to receive text messages from AI Agent Worx
+							(Brand W LLC) at 775-204-8485 related to my inquiry, including appointment
+							confirmations, follow-ups, and account updates. Message frequency varies.
+							Message &amp; data rates may apply. Reply STOP to opt out at any time, or
+							HELP for help. See our
+							<a href="/privacy#sms">Privacy Policy</a> and
+							<a href="/terms">Terms</a>.
+						</span>
+					</label>
+
+					<button type="submit" class="btn">Send message</button>
+				</form>
+			</div>
 		</div>
+
+		<p style="font-size: 0.85rem; color: rgb(var(--text-soft)); margin-top: 2rem; max-width: 720px;">
+			We never share or sell your contact information. SMS consent is not required to do
+			business with us — you can opt out at any time and we will continue communicating by
+			email or phone instead. Full details in our
+			<a href="/privacy">Privacy Policy</a>.
+		</p>
 	</section>
 </Layout>

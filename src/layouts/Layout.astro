@@ -33,8 +33,9 @@ const { title, description = "AI Agent Worx — building intelligent agents that
 			<slot />
 		</main>
 		<footer>
-			<p>&copy; 2026 AI Agent Worx. All rights reserved.</p>
-			<p><a href="mailto:hello@aiagentworx.ai">hello@aiagentworx.ai</a></p>
+			<p>&copy; 2026 AI Agent Worx · a Brand W LLC company · All rights reserved.</p>
+			<p><a href="mailto:brian@aiagentworx.ai">brian@aiagentworx.ai</a> · <a href="tel:+17752048485">775-204-8485</a></p>
+			<p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
 		</footer>
 		<style is:global>
 			:root {
@@ -167,6 +168,77 @@ const { title, description = "AI Agent Worx — building intelligent agents that
 			.card:hover {
 				border-color: rgba(var(--accent-light), 0.4);
 				transform: translateY(-3px);
+			}
+			form.contact-form {
+				display: flex;
+				flex-direction: column;
+				gap: 1.1rem;
+				margin-top: 1.5rem;
+			}
+			form.contact-form label {
+				display: flex;
+				flex-direction: column;
+				gap: 0.4rem;
+				color: rgb(var(--text));
+				font-size: 0.95rem;
+				font-weight: 500;
+			}
+			form.contact-form input,
+			form.contact-form textarea {
+				font: inherit;
+				color: rgb(var(--text));
+				background: rgba(var(--bg), 0.6);
+				border: 1px solid rgba(var(--text), 0.15);
+				border-radius: 8px;
+				padding: 0.7rem 0.85rem;
+				width: 100%;
+			}
+			form.contact-form input:focus,
+			form.contact-form textarea:focus {
+				outline: none;
+				border-color: rgb(var(--accent-light));
+				box-shadow: 0 0 0 3px rgba(var(--accent), 0.18);
+			}
+			form.contact-form textarea {
+				min-height: 140px;
+				resize: vertical;
+			}
+			form.contact-form .consent {
+				flex-direction: row;
+				align-items: flex-start;
+				gap: 0.7rem;
+				font-weight: 400;
+				color: rgb(var(--text-soft));
+				font-size: 0.9rem;
+				line-height: 1.45;
+			}
+			form.contact-form .consent input {
+				width: auto;
+				margin-top: 0.25rem;
+				accent-color: rgb(var(--accent));
+			}
+			form.contact-form button {
+				align-self: flex-start;
+				cursor: pointer;
+				border: none;
+				font: inherit;
+			}
+			.legal-page h2 {
+				font-size: 1.5rem;
+				margin: 2rem 0 0.75rem;
+			}
+			.legal-page h3 {
+				font-size: 1.1rem;
+				margin: 1.5rem 0 0.5rem;
+			}
+			.legal-page p,
+			.legal-page li {
+				color: rgb(var(--text-soft));
+				font-size: 1rem;
+			}
+			.legal-page ul {
+				padding-left: 1.25rem;
+				margin-bottom: 1rem;
 			}
 			.grid {
 				display: grid;
