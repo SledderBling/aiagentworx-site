@@ -14,13 +14,18 @@ const { title, description = "AI Agent Worx — building intelligent agents that
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="512x512" href="/brand/icon.png" />
+		<link rel="apple-touch-icon" href="/brand/icon.png" />
+		<meta property="og:image" content="/brand/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<header>
 			<nav>
-				<a href="/" class="logo">AI Agent Worx</a>
+				<a href="/" class="logo" aria-label="AI Agent Worx home">
+					<img src="/brand/logo.png" alt="AI Agent Worx" width="180" height="60" />
+				</a>
 				<div class="nav-links">
 					<a href="/">Home</a>
 					<a href="/about">About</a>
@@ -82,13 +87,15 @@ const { title, description = "AI Agent Worx — building intelligent agents that
 				gap: 1rem;
 			}
 			.logo {
-				font-weight: 700;
-				font-size: 1.25rem;
-				background: linear-gradient(135deg, rgb(var(--accent-light)), rgb(var(--accent)));
-				-webkit-background-clip: text;
-				background-clip: text;
-				color: transparent;
+				display: inline-flex;
+				align-items: center;
 				text-decoration: none;
+				line-height: 0;
+			}
+			.logo img {
+				height: 48px;
+				width: auto;
+				display: block;
 			}
 			.nav-links {
 				display: flex;
