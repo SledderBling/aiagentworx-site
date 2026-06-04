@@ -93,9 +93,12 @@ const { title, description = "AI Agent Worx — building intelligent agents that
 				line-height: 0;
 			}
 			.logo img {
-				height: 48px;
+				height: 80px;
 				width: auto;
 				display: block;
+			}
+			@media (max-width: 600px) {
+				.logo img { height: 56px; }
 			}
 			.nav-links {
 				display: flex;
